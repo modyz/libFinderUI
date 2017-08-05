@@ -1,0 +1,26 @@
+<h1 md-dialog-title>Tell us About the Version:</h1>
+<div md-dialog-content>
+<form (ngSubmit)="addVersion()" #heroForm="ngForm">
+<md-input-container style="width: 100%">
+    <input name="versionNumber" required style="width: 100%" mdInput placeholder="Version Number" [(ngModel)]="version.version_number" dividerColor="#e9573f">
+</md-input-container>
+
+<h3 style="display: inline-block">System libs:</h3>
+<button type="button" style="margin-top:15px;float: right" (click)="addDependency()" md-raised-button>Another!</button>
+
+
+<md-input-container *ngFor ="let dependency of dependencies" style="width: 100%">
+    <input name="dep" required [(ngModel)]="dependency.name" required   style="width: 100%" mdInput placeholder="System Lib name" dividerColor="#e9573f">
+</md-input-container>
+
+
+
+</form>
+
+
+</div>
+<md-dialog-actions>
+  <button [disabled]="!heroForm.form.valid" (click)="addVersion()" type="submit" style="background-color: #2ECC71;color: white;margin-left: 180px;margin-right: 50px;" md-button md-dialog-close>add</button>
+  <!-- Can optionally provide a result for the closing dialog. -->
+  <button type="button" md-button [md-dialog-close]="true" style="background-color: #D91E18;color: white">cancle</button>
+</md-dialog-actions>

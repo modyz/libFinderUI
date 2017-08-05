@@ -1,0 +1,41 @@
+<h1 md-dialog-title>Tell us About the Gem:</h1>
+<div md-dialog-content>
+<form (ngSubmit)="addGem()" #heroForm="ngForm">
+<md-input-container style="width: 100%">
+    <input name="gemName" required style="width: 100%" mdInput placeholder="Gem Name" [(ngModel)]="gem.name" dividerColor="#e9573f">
+</md-input-container>
+<br>
+<br>
+
+   <md-select name="os" style="width: 100%"placeholder="Operating System" [(ngModel)]="gem.operating_system_id" >
+      <md-option *ngFor="let operatingSystem of operatingSystems" [value]="operatingSystem.id">
+        {{ operatingSystem.name }}
+      </md-option>
+  </md-select>
+<br><br>
+<md-input-container style="width: 100%">
+    <input name="version" required [(ngModel)]="gem.versions_attributes[0].version_number" style="width: 100%" mdInput placeholder="version number" dividerColor="#e9573f">
+</md-input-container>
+
+<br>
+<div>
+<h3 style="display: inline-block">System libs:</h3>
+<button type="button" style="margin-top:15px;float: right" (click)="addDependency()" md-raised-button>Another!</button>
+</div>
+
+<md-input-container *ngFor ="let dependency of dependencies" style="width: 100%">
+    <input name="dep" required [(ngModel)]="dependency.name" required   style="width: 100%" mdInput placeholder="System Lib name" dividerColor="#e9573f">
+</md-input-container>
+
+
+
+</form>
+
+
+</div>
+
+<md-dialog-actions>
+  <button [disabled]="!heroForm.form.valid" (click)="addGem()" type="submit" style="background-color: #2ECC71;color: white;margin-left: 180px;margin-right: 50px;" md-button md-dialog-close>add</button>
+  <!-- Can optionally provide a result for the closing dialog. -->
+  <button type="button" md-button [md-dialog-close]="true" style="background-color: #D91E18;color: white">cancle</button>
+</md-dialog-actions>

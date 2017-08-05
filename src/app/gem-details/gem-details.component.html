@@ -1,0 +1,32 @@
+<div *ngIf="gem" class="versions">
+ <md-card (click)="selectVersion(v)"  *ngFor="let v of gem['versions']">
+   <md-card-title>Version : {{v.version_number}}</md-card-title>
+   <md-card-subtitle>Number of Dependencies: {{v.dependencies.length}}</md-card-subtitle>
+   </md-card>
+</div>
+<div class="gem-result">
+  <div class="gem-container">
+  <md-card class="gem-card" *ngIf="gem">
+   <md-card-title>Gem : {{gem.name}}</md-card-title>
+   <md-card-subtitle>version {{selectedVersion.version_number}} </md-card-subtitle>
+   <md-card-content>
+    <md-card-subtitle>Dependencies:</md-card-subtitle>
+       <md-card *ngFor="let dep of selectedVersion.dependencies">
+        <md-card-title>{{dep.name}}</md-card-title>
+       </md-card>
+    
+
+   </md-card-content>
+   <md-card-footer style="text-align: center">
+     <button (click)="addVersion()" style="margin-bottom: 50px"  md-button>add another version</button>
+   </md-card-footer>
+   </md-card>
+  </div>
+</div>
+
+<footer>
+  <div class="back-btn">
+  <button (click)="goHome()"><strong> Back Home?! </strong></button>
+</div>
+
+</footer>

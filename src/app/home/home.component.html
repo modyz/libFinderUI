@@ -1,0 +1,16 @@
+<h1 class="title">
+  Lets Find your Dependencies!
+</h1>
+
+
+<div class="search">
+    <input [(ngModel)]="gemName" (keyup.enter)="searchGem()" type="text" placeholder="your awesome gem name">
+    <div class="recent-gems">
+      Recently added gems:<p *ngFor = "let gem of recentGems"><u>{{gem.name}}</u></p>
+    </div>
+</div>
+
+
+<div class="search-btn">
+  <button (click)="addGem()"><strong> Add anfo about a gem?! </strong></button>
+</div>

@@ -1,0 +1,70 @@
+.title{
+    margin-top: 10%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;
+    color:white;
+    vertical-align: center;
+    text-align: center;
+}
+
+
+.search
+{
+    width:100%;
+    text-align: center;
+}
+
+.search input
+{
+    width: 80%;
+    height: 10px;
+    font-size: 20px;
+    padding:20px;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    box-shadow:  0 0 0px 5px rgba(20,28,34,0.1);
+}
+
+
+.search-btn
+{
+   width: 100%;
+    text-align: center;
+    float: left;
+
+}
+
+.recent-gems
+{
+    width:100%;
+    color: white;
+    text-align: center
+}
+.recent-gems p{
+    display: inline-block;
+    padding: 5px;
+
+}
+
+.search-btn button{
+    color: #e9573f;
+    background-color: white;
+    border-radius: 5px;
+    border:none;
+    outline:none;
+    font-size:20px;
+    padding:20px 15px;
+    margin-top: 20px;
+    transition: 0.7s;
+    
+}
+
+
+.search-btn button:hover{
+    cursor: pointer;
+    transform:scale(1.3);
+
+}
+
+
